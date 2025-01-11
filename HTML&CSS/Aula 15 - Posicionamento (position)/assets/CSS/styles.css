@@ -1,0 +1,36 @@
+.div1, .div2, .div3 {
+    height: 250px;
+    width: 250px;
+    margin: 15px;
+}
+.div1 {
+    position: static; /* position static maném a posição do elemento como é originalmente */
+    background-color: brown;
+} 
+.div2 {
+    position: relative; /* position relative desloca o objeto, porém mantém a sua área inicial em block. Relative pode ser usado para sobrepor elementos */
+    top: 50px;
+    left: 50px;
+    background-color: darkblue
+}
+.div1 {
+    position: static; /* position static maném a posição do elemento como é originalmente */
+    background-color: brown;
+}
+.div2 {
+    position: relative; /* position relative desloca o objeto, porém mantém a sua área inicial em block. */
+    top: 50px; /* top, right, bottom e left em relative são medidos a partir do objeto anterior ao elemento. */
+    left: 50px;
+    background-color: darkblue
+}
+.div3 {
+    position: absolute; /* position absolute diz ao elemento que deve se comportar de maneira absoluta na página, como se estivesse em uma camada superior */
+    background-color: coral;
+    top: 700px; /* top, right, bottom e left são medidos a partir das bordas do viewport(tela visível). */
+    left: 50px;
+}
+.div3 h1 {
+    position: absolute;
+    top: 10px; /* nesse caso há uma exceção, onde absolute respeita aa bordaa do elemento já posicionado como absolute */
+    left: 10px;
+}

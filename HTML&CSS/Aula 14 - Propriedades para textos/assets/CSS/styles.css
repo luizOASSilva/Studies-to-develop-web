@@ -1,0 +1,12 @@
+p {
+    font-family: monospace;
+    font-size: 10px;
+    font-weight: bold;
+    text-decoration: overline underline;
+    word-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 2px cornflowerblue;
+    word-spacing: 10px;
+    text-indent: 25px;
+}

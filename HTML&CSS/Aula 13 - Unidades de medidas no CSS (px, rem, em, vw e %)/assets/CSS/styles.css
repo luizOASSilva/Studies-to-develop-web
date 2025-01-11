@@ -1,0 +1,27 @@
+/* 
+px é uma medida absoluta
+rem, em, vh, vw e % tem tamanhos variáveis
+*/
+
+html {
+    font-size: 24px;
+}
+h1 {
+    font-size: 20px; /* px é absoluto na página, não pode ser alterado */
+}
+.div-pai {
+    width: 50vw; /* 1 vh representa 1% do tamanho do width do viewport */
+    height: 50vh; /* 1 vh representa 1% do tamanho do height do viewport */
+    font-size: 50px;
+    background-color: brown;
+}
+.div-pai p {
+    font-size: 0.5em; /* a medida 'em' se comporta de acordo com a fonte do elemento pai mais próximo. No caso 50 px (div-pai) x 0,5em = 25px */
+}
+.div-pai .outro-paragrafo {
+    font-size: 0.5rem; /* rem pega a medida do root da página, ou seja do html. Seguindo a mesma ideia do em, é feito o cálculo 24px (html) x 0.5em =  12px */
+}
+.div-filho {
+    background-color: blueviolet;
+    width: 50%; /* % será calculada baseada no tamanho da div pai, 50% de 50 vw */
+}

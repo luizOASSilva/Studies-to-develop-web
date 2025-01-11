@@ -1,0 +1,47 @@
+/* Ordem especificidade 
+
+* para ver o nível de especificidade basta apontar o mouse para o nome da classe, id, pesudo classe, entre outros.
+
+    0           0                  0                    0
+CSS inline     ID #     Classe, pseudo-classe       Elemento
+                            pseudo-elemento
+
+(0,0,0) */
+
+
+p { /* (0, 0, 1) menor especificdade possível = 1*/
+    background-color: aqua;
+}
+.classe-paragrafo { /* (0,1,0) maior especificidade que o anterior = 10 */
+    background-color: blue;
+}
+#id-paragrafo { /* (1,0,0) maior especificidade entre os 3 = 100 */
+    background-color: blue; /* como a especificidade dessa chamada é a maior, este estilo será aplicado */
+}
+
+/* a regra é feita por número maior. Se combinarmos dois tipos e por maior que seja o id na ordem de maior especificidade, (1,0,1) se sobressai. Ex:  */
+
+#id-outro-paragrafo { /* (1,0,0) de especificdade = 100 (por padrão a mais alta em um arquivo .css) */
+    background-color: brown;
+}
+p#id-outro-paragrafo {  /* somou-se as especificidades do id(1,0,0) com a do elemento p(0,0,1) ou seja (1,0,1) = 101 */
+    background-color: chocolate;  /* como 101 é maior que 100, este background color será aplicado. */
+}
+
+/* independente da ordem, se uma referência tiver uma especificidade maior que a sua posterior, seu estilo será prevalecido */
+
+p#id-outro-do-outro-paragrafo.classe-outro-do-outro-paragrafo { /* especificidade (1,1,1) = 111 */
+    background-color: blueviolet;
+}
+#id-outro-do-outro-paragrafo ,.classe-outro-do-outro-paragrafo { /* especificidade (1,1,0) = 110 | apresar de vir depois, o estilo aplicado é a referência anterior, pois possui um grau de especificidade maior (111 > 110) */
+    background-color: darkkhaki;
+}
+
+/* em caso de empate entre especificidades prevalece o último estilo referenciado */
+
+body h4 + p { /* especificidade (0,0,3) = 3 */
+    background-color: lightslategray;
+}
+html body p { /* especificidade (0,0,3) = 3 */
+    background-color: olive; /* como as especificidades dessa referência e sua anterior são as mesmas 3 = 3, prevalece a última chamada */
+}

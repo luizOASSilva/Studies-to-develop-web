@@ -1,0 +1,52 @@
+h1 {
+    color: darkblue;
+}
+.subtitle {
+    color: blueviolet;
+}
+#paragraph {
+    background-color: coral;
+}
+.box { /* TAG p herda color da div */
+    color: rgb(255, 255, 255);
+}
+.box p {
+    background-color: blue;
+}
+h3, /* selecionando dois elementos de uma vez */
+a {
+    color: black;
+}
+section.main div.main-container h4 { /* mais especificidade, se remover a classe o elemento não recebe o estilo */
+    background-color: darkslateblue;
+}
+
+h4 + p { /* o '+' seleciona o elemento seguinte a TAG que vem acompanhada anterior a ele, nesse caso seleciona a p que está no arquivo .html a logo a frente de h4 */
+    text-transform: uppercase;
+}
+h5 ~ p { /* O '~' seleciona todos os elementos correspondentes a TAG depois do símbolo '~'. No caso os dois p's receberão o background em aqua */
+    background-color: aqua;
+}
+ul > .ordenado > li {
+    background-color:   coral;
+}
+[meu-atributo] {
+    color: darkgreen
+}
+[checked] {
+    height: 100px;
+    width: 100px;
+}
+[outro-atributo="valor-a"] {
+    background-color: crimson;
+}
+[outro-atributo^="valor."] { /* seleciona o elemento onde o valor do atributo 'outro-atributo' começa com 'valor.' */
+    background-color: darkorange;
+}
+[outro-atributo$="luiz"] { /* seleciona o elemento onde o valor  do atributo contém a letra 'l' */
+    background-color: grey;
+}
+[outro-atributo*="tro lu"] { /* seleciona o elemento onde o valor do atributo contém exatamente o fragmento solicitado */
+    background-color: lightgreen;
+}
+

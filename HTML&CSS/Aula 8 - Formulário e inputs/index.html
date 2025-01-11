@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        label{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulário</h1>
+    <form action="#" method="post" target="_blank" autocomplete="off">
+        <p>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome">
+        </p>
+        <p>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="example@example.com">
+        </p>
+        <p>
+            <label for="email">senha</label>
+            <input type="password" id="email" name="email" placeholder="*****">
+        </p>
+        <p>
+            <label for="numero">Idade</label>
+            <input type="number" id="numero" name="numero" placeholder="Insira um número">
+        </p>
+        <p>
+            <label for="arquivo">Arquivo</label>
+            <input type="file" id="arquivo" name="arquivo" accept=".jpg">
+        </p>
+        <select>
+            <optgroup label="Grupo de opções">
+                <option>Opção 1</option>
+                <option>Opção 2</option>
+                <option>Opção 3</option>
+                </optgroup>
+            <option>Opção 1</option>
+            <option>Opção 2</option>
+            <option>Opção 3</option>
+        </select>
+        <p>
+            <label for="range">Selecione o range</label>
+            <input type="range" max="100" min="0" step="10" id="range" name="range">
+        </p>
+        <p>
+            <label for="search">Digite sua url</label>
+            <input type="search" placeholder="www.wxample.com" id="search" name="search">
+        </p>
+        <label for="textarea">Escrea um pequeno texto</label>
+        <textarea rows="10" cols="50" id="textarea" name="textarea"></textarea>
+        <p>
+            <label for="data">Escolha a data</label>
+            <input type="date" name="data" id="data" value="2005-10-10">
+        </p>
+        <p>
+            <label for="datahora">Escolha a data e a hora</label>
+            <input type="datetime-local" name="datahora" id="datahora" value="2005-10-10T15:00"> <!-- no datetime-local para definir a hora, usa-se o T no value-->
+        </p>
+        <p>
+            <label for="cor">Escolha uma cor</label>
+            <input type="color" name="cor" id="cor" value="#FFFFFF">
+        </p>
+        <p>
+            <label for="checkbox">Sou um dev</label> <!-- a checkbox pode ser agrupada pelo mesmo name -->
+            <input type="checkbox" name="dev" id="checkbox" value="sim">
+            <label for="checkbox2">Sou um dev2</label>
+            <input type="checkbox" name="dev" id="checkbox2" value="sim" >
+            <label for="checkbox3">Sou um dev3</label>
+            <input type="checkbox" name="dev" id="checkbox3" value="sim" checked>
+        </p>
+        <p>
+            <label for="radio">Sou um dev</label>
+            <input type="radio" name="radio" id="radio" value="sim">
+            <input type="radio" name="radio" id="radio" value="não">
+        </p>
+        <p>
+            <button type="submit">Enviar</button>
+            <button type="reset">Resetar</button>
+        </p>
+
+    </form>
+    
+</body>
+</html>

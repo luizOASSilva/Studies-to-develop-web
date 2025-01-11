@@ -1,0 +1,17 @@
+.div1, .div2, .div3{
+    height: 250px;
+    width: 250px; 
+    margin: 15px;
+}
+.div1 {
+    background-color: darkcyan;
+    border-top-left-radius: 50px; /* aplica borda arredondada apenas no alto na esquerda */
+}
+.div2 {
+    background-color:  darkmagenta;
+    border-radius: 50px; /* aplica borda arredondada em todos os lados */
+}
+.div3 {
+    background-color: darkred;
+    border-radius: 100%; /* aplica borda arredondada em todos os lados */
+}

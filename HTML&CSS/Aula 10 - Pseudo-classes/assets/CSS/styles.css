@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1 {
+    transition: all 1s ease-in-out;
+}
+h1:hover {
+    color: white;
+    background-color: darkslateblue;
+}
+input:disabled {
+    box-shadow: 0 0 1px rgb(0, 0, 0.5);
+}
+input:required {
+    border: red 1px solid;
+}
+ul.list0 li:last-child {
+    background-color: darkgoldenrod;
+}
+ul.list0 li:first-child {
+    background-color: darkslategray;
+}
+input:checked + p {
+    background-color: aqua;
+}
+a:link {
+    color: brown;
+}
+a:visited {
+    color: darkkhaki;
+}
+p:not(.paragrafo-meio, .paragrafo1, .paragrafo-exemplo) {
+    background-color: blue;
+    color: white;
+}
+.checkbox:checked + p {
+    background-color: aquamarine;
+}
+.checkbox:not(:checked) + p {
+    background-color: aqua;
+    color: white;
+}
+ul.list li:nth-child(2) {
+    background-color: blue;
+    color: white;
+}
+ul.list2 li:nth-child(even) { /* pares */
+    background-color: blue;
+    color: white;
+}
+ul.list3 li:nth-child(odd) {  /* ímpares */
+    background-color: chartreuse;
+}
+ul.list4 li:nth-child(3n) {
+    background-color: darkgreen;
+}
+ul.list4 li:nth-child(4n+4) {
+    background-color: coral;
+}
+ul.lista-nova li::after { /* depois do elemento */
+    content: "-";
+}
+ul.lista-nova li::before { /* antes do elemento */
+    content: "/";
+}
+.paragrafo-exemplo::first-letter {
+    display: block;
+    font-size: 100px;
+    margin: 0 10px 10px 0;
+    float: left;
+}
+.paragrafo-exemplo::first-line {
+    background-color: blueviolet;
+}
+.paragrafo-exemplo::selection {
+    background-color: black;
+    color: white;
+}
+input::placeholder {
+    color: deeppink;
+}
