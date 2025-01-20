@@ -1,21 +1,23 @@
 function meuEscopo () {
     const form = document.querySelector('#form');
-    form.onsubmit = function(evt) {
-        const pessoas = [];
+    const resultado = document.querySelector('#resultado');
+    const pessoas = [];
 
-        function recebeData() {
-            console.log('passou aqui');
-        }
+    form.addEventListener('submit', recebeForm);
 
+    function recebeForm(evt) {
         evt.preventDefault();
+
         const nome = form.querySelector('#nome');
         const sobrenome = form.querySelector('#sobrenome');
         const altura = form.querySelector('#altura');
 
-        form.addEventListener('submit', )
-    }
-
-    
+        pessoas.push({
+            nome: nome.value,
+            sobrenome: sobrenome.value,
+            altura: altura.value
+        });
+        resultado.innerHTML += `<P> ${pessoas[pessoas.length - 1].nome} ${pessoas[pessoas.length - 1].sobrenome} ${pessoas[pessoas.length - 1].altura} </p>`;
+    }  
 }
 meuEscopo();
-
