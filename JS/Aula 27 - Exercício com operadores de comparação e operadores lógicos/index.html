@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site</title>
+    <link rel="stylesheet" href="assets/CSS/style.css">
+</head>
+
+<body>
+    <section class="container">
+        <h1>Calculadora de IMC</h1>
+        <div class="grid-table">
+            <div class="col">
+                <h2>IMC</h2>
+                <p>Menos que 18,5</p>
+                <p>Entre 18,5 e 24,9</p>
+                <p>Entre 25 e 29,9</p>
+                <p>Entre 30 e 34,9</p>
+                <p>Entre 35 e 39,9</p>
+                <p>Mais que 40</p>             
+            </div>
+            <div class="col">
+                <h2>Nível</h2>
+                <p>Abaixo do peso</p>
+                <p>Peso normal</p>
+                <p>Sobrepeso</p>
+                <p>Obesidade grau 1</p>
+                <p>Obesidade grau 2</p>
+                <p>Obesidade grau 3</p>       
+            </div>
+        </div>
+        <form action="" id="form">
+            <label for="peso">Peso em KG:</label>
+            <input type="text" id="peso">
+
+            <label for="altura">Altura em metros:</label>
+            <input type="text" id="altura">
+
+            <input type="submit" value="Enviar">
+        </form>
+        <div id="resultado" class="container-resultado"></div>
+    </section>
+    <script src="assets/JS/script.js"></script> <!-- linkando o JavaScript agora em arquivos diferentes -->
+</body>
+
+</html>
