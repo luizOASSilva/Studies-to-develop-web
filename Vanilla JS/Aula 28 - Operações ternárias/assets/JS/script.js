@@ -1,7 +1,7 @@
 // ? : -> operação ternária
 // a operação ternária serve para encurtar ou como um atalho para construção de um if. Normalmente operações ternárias são usadas para casos simples de instruções condidicionais
 
-let pontuacaoUsuario = 1000
+let pontuacaoUsuario = 1000;
 
 /*
 if(pontuacaoUsuario >= 1000) {
