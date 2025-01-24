@@ -15,8 +15,6 @@ for (let i = 0; i < elementos.length; i++) {
     obj = elementos[i];
     ({tagName, texto} = obj);
 
-    console.log(tagName, texto);
-
     const elemento = criaElemento(tagName);
 
     setText(elemento, texto);
