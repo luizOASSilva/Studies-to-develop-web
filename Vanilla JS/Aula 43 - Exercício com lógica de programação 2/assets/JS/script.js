@@ -18,4 +18,4 @@ function isLandscape (largura, altura) {
 
 const isLandscape = (width, height) => width > height;
 
-console.log(isLandscape);
+console.log(isLandscape(1980, 1080));
