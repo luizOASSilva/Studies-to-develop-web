@@ -30,9 +30,8 @@ const pessoa = {
 }
 
 /*
-erro: pessoa is not iterable -> pessoa não é iterável
 for (i of pessoa) {
    console.log(); 
-}
+} erro: pessoa is not iterable -> pessoa não é iterável
 */
 
