@@ -31,4 +31,3 @@ try {
 } finally {
     console.log('Fecha o documento para evitar bugs');
 }
-
