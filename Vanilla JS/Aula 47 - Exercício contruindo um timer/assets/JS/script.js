@@ -11,19 +11,22 @@ form.addEventListener('submit', function timerAction (evt) {
     if(evt.submitter.id === 'play'){
         playTimer();
         buttonPlay.setAttribute('disabled', true);
+        h1.style.color = 'darkkhaki';   
+        
     } 
     if(evt.submitter.id === 'pause'){
         pauseTimer();
         buttonPlay.removeAttribute('disabled');
+        h1.style.color = 'darkred';
     }
     if(evt.submitter.id === 'reset'){
         resetTimer();
         buttonPlay.removeAttribute('disabled');
+        h1.style.color = 'darkkhaki'; 
     }
 });
 
 function playTimer() {
-    clearInterval(playing); 
     playing = setInterval(() => {
         UnixDate.setSeconds(UnixDate.getSeconds() + 1);
         h1.innerHTML = UnixDate.toLocaleTimeString('pt-BR');  
