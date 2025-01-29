@@ -3,7 +3,7 @@ const h1 = document.querySelector('h1');
 let buttonPlay = document.querySelector('#play');
 let playing;
 
-let UnixDate = new Date(0 + (60 * 60 * 3 * 1000)) // resetando objeto Date para resetar a data
+let UnixDate = new Date(0 + (60 * 60 * 3 * 1000)); // resetando objeto Date para resetar a data
 
 form.addEventListener('submit', function timerAction (evt) {
     evt.preventDefault();
@@ -12,7 +12,6 @@ form.addEventListener('submit', function timerAction (evt) {
         playTimer();
         buttonPlay.setAttribute('disabled', true);
         h1.style.color = 'darkkhaki';   
-        
     } 
     if(evt.submitter.id === 'pause'){
         pauseTimer();
@@ -30,7 +29,7 @@ function playTimer() {
     playing = setInterval(() => {
         UnixDate.setSeconds(UnixDate.getSeconds() + 1);
         h1.innerHTML = UnixDate.toLocaleTimeString('pt-BR');  
-    }, 1000)
+    }, 1000);
 }
 
 function pauseTimer() {
