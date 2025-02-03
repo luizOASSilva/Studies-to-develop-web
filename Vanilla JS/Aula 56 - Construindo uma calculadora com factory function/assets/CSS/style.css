@@ -1,0 +1,68 @@
+:root {
+    --gap: 16px;
+    --main-color: rgba(128, 128, 128, 0.10);
+    --clear-color: rgba(0, 0, 0, 0.20);
+    --delete-color: rgba(128, 0, 0, 0.20);
+    --result-color: rgba(0, 0, 128, 0.20);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+}
+section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+section .calc {
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.calc input {
+    height: 48px;
+    border: none;
+    background: var(--main-color);
+    font-size: 18px;
+    padding-left: 16px;
+}
+.calc table{
+    margin-top: var(--gap);
+}
+.calc table tr, .btn{
+    background: var(--main-color);
+    text-align: center;
+}
+.calc table .btn:hover{
+    background: rgba(255, 255, 255, 0.05);
+}
+.calc table td{
+    height: 64px;
+    cursor: pointer;
+}
+.clear, .result, .delete {
+    font-weight: 600;
+}
+.clear {
+    background: var(--clear-color);
+}
+.result {
+    background: var(--result-color);
+}
+.delete {
+    background: var(--delete-color);
+}
+@media (max-width: 524px) {
+    section {
+        padding: 5%;
+    }
+    
+}
