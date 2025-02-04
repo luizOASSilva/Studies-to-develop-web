@@ -3,6 +3,7 @@ function startCalculator(){
         display: document.querySelector('#display'),
         start() {
             this.click();
+            this.enter();
         },
 
         click() {
@@ -23,18 +24,29 @@ function startCalculator(){
             });
         },
 
+        enter() {
+            document.addEventListener('keyup', e => {
+                if (e.key === 'Enter') this.result();
+                else return;
+            });
+        },
+
         clearDisplay() {
             this.display.value = '';
         },
 
         result() {
-            const calc = this.display.value;
-            const result = eval(calc);
-            if(Number(result)) {
-                this.display.value = result;
-            }else {
+            const expression = this.display.value;
+            try{
+                const result = eval(expression);
+                if(result){
+                    this.display.value = result;
+                    return;
+                }
+            }catch(e){
+                alert('Cálculo inválido');
                 return;
-            }
+            } 
         },
 
         deleteOne() {
