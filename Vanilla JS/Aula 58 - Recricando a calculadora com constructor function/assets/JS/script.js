@@ -1,6 +1,6 @@
 function Calculadora() {
     this.display = document.querySelector('#display');
-    this.value;
+    
     this.inicia = () => {
         click();
         pressEnter();
