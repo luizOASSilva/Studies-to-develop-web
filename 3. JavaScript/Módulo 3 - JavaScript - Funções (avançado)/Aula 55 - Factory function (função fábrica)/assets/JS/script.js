@@ -28,7 +28,7 @@ function criaPessoa(nome, sobrenome, altura, peso) { // função que retorna um 
     };
 }
 
-const p1 = criaPessoa('Luiz', 'Silva', 1.75, 90); // atribui a variável p1 o objeto retornado pela função criaPessoa
+const p1 = criaPessoa('Luiz', 'Silva', 1.75, 90); // atribui à variável p1 o objeto retornado pela função criaPessoa
 console.log(p1.alturaAoQuadrado); // alturaAoQuadrado agora pode ser acessada como uma propriedade do objeto
 p1.nomeCompleto = 'Luiz Otavio Almeida Soares da Silva';
 console.log(p1.sobrenome);

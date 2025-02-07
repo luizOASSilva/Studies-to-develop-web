@@ -14,7 +14,7 @@ for (let valor of listaNome){ // em for of, o índice é descartado e a variáve
     console.log(valor);
 }
 
-listaNome.forEach((element) => console.log('exemplo de forEach:', element)); // "forEach é um método que executa uma função en cada elemento de um array enquanto o percorre"
+listaNome.forEach((element) => console.log('exemplo de forEach:', element)); // "forEach é um método que executa uma função em cada elemento de um array enquanto o percorre"
 
 listaNome.forEach((elemento, indice, array) => { 
     console.log(`índice: ${indice} - valor:${elemento} com forEach e array: ${array}`);
