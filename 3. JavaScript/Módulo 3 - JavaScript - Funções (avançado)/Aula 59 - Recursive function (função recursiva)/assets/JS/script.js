@@ -3,7 +3,7 @@ function recursiva(max) { // funções recursivas funcionam como laços de repet
     if(max >= 10) { // verifica se o valor de "max" é maior que 10
         return; // caso verdadeiro, aborta a função
     }
-    max++; // soma mais um em no parâmetro "max"
+    max++; // soma mais um no parâmetro "max"
     console.log(max); // 
     recursiva(max); // chama a função novamente mas agora com max valendo o valor acrescido na última execução
 }
