@@ -8,8 +8,6 @@ function ValidaCPF(cpfEnviado) {
 }
 
 ValidaCPF.prototype.valida = function() {
-    // if(typeof this.cpfLimpo === 'string') return false;
-    // if(this.cpfLimpo.lenght !== 11) return false;
 
     const cpfParcial = this.cpfLimpo.slice(0, -2);
     const digito1 = this.criaDigito(cpfParcial);
@@ -36,7 +34,7 @@ ValidaCPF.prototype.criaDigito = function(value) {
     return digito > 9 ? '0' : String(digito);
 }
 
-const cpfLimpo = new ValidaCPF('705.484.450-52');
+const cpfLimpo = new ValidaCPF('51159886822');
 
 if(cpfLimpo.valida()) {
     console.log('CPF válido');
