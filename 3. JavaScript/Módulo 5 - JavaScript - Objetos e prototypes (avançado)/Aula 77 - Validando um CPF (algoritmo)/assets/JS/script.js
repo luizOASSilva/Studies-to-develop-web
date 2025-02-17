@@ -15,12 +15,11 @@ ValidaCPF.prototype.valida = function() {
 
     const novoCPF = cpfParcial + digito1 + digito2;
 
-    return novoCPF === this.cpfLimpo ? true : false
+    return novoCPF === this.cpfLimpo ? true : false;
 }
 
 ValidaCPF.prototype.criaDigito = function(value) {
     const arrCPF = Array.from(value);
-    console.log(arrCPF);
 
     let sub = arrCPF.length + 1;
 
