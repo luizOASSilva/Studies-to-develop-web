@@ -12,7 +12,7 @@ class Carro {
     set velocidade(valor) { // set protege o dado que será tratado
         // set sempre necessita de um parâmetro
         if(typeof valor !== 'number') return;
-        if(valor >= 100 || valor <= 0) return
+        if(valor >= 100 || valor <= 0) return;
         this[_velocidade] = valor;
     }
 
