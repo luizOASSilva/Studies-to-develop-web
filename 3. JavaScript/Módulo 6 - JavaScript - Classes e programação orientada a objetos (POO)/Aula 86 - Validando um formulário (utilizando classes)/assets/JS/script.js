@@ -12,10 +12,16 @@ class ValidaFormulario {
 
     handleSubmit(e) {
         e.preventDefault();
-        const valid = this.isValid();
+        const inputIsValid = this.inputIsValid();
+        const passIsValid = this.passwordIsValid();
+
+        if(inputIsValid && passIsValid) {
+            alert('Formulário enviado');
+            this.form.submit();
+        }
     }
 
-    isValid() {
+    inputIsValid() {
         console.log('aqui');
         let valid = true;
 
@@ -35,12 +41,8 @@ class ValidaFormulario {
                     valid = false;
                 }
             }
-            if(input.classList.contains('password')) {
-               this.passwordIsValid();
-            }
-
         }
-        return this.valid;
+        return valid;
     }
 
     createError(input, message) {
@@ -64,7 +66,10 @@ class ValidaFormulario {
             console.log(repeatPassword);
             this.createError(password, 'As senhas não coincidem');
             this.createError(repeatPassword, 'As senhas não coincidem');
+            return false;
         }
+
+        return true;
     }
     
 }
