@@ -1,0 +1,21 @@
+body {
+    font-family: sans-serif;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+table caption {
+    padding: 1rem;
+}
+td, tr, th{
+    text-align: start;
+    padding: 0.5rem;
+}
+th {
+    color: white;
+    background-color: rgba(165, 42, 42, 0.932)
+}
+td {
+    border: 0.05rem rgba(128, 128, 128, 0.404) solid;
+}
