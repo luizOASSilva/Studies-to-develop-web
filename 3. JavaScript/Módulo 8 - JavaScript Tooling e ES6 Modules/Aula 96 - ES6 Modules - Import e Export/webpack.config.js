@@ -11,7 +11,7 @@ module.exports = { // criando um objeto que será exportado para outros arquivos
     },
     module: { 
         rules: [{ // criando regras para a execução do webpack
-            exclude: /bode_modules/, // excluindo a pasta "node_modules" para que o webpack não a analise. Para evitar lentidão(node_modules contém muitos arquivos)
+            exclude: /node_modules/, // excluindo a pasta "node_modules" para que o webpack não a analise. Para evitar lentidão(node_modules contém muitos arquivos)
             test: /\.js$/, // dizendo ao webpack, qual o tipo de extensão de arquivo ele deverá analisar. Nesse caso, arquivos do tipo ".js"
             use: {
                 loader: 'babel-loader', // qual loader será utilizado

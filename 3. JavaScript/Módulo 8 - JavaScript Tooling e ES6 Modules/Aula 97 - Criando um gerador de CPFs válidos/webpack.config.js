@@ -19,6 +19,9 @@ module.exports = { // criando um objeto que será exportado para outros arquivos
                     presets: ['@babel/env'] // qual preset será utilizado
                 }
             }
+        }, {
+            test: /\.css$/, // dizendo ao webpack para ler arquivos do tipo .css
+            use: ['style-loader', 'css-loader'] // utilizando as depêndencias para o css
         }]
     },
     devtool: 'source-map' // "source-map" é responsável por mapear o erro no arquivo em que o mesmo ocorreu. No bundle será jogado todo o script que será convertido em JavaScript antigo. "source-map" apontará para qual arquivo em específico o erro está
