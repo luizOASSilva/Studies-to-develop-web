@@ -4,7 +4,7 @@ const path = require('path'); // node utiliza o sistema de módulos CommonJS
 
 module.exports = { // criando um objeto que será exportado para outros arquivos JavaScript. Contendo as configurações do webpack
     mode: 'production',
-    entry: './src/index.js',
+    entry: './src/main.js',
     output: {
         path: path.resolve(__dirname, 'public', 'assets', 'JS'), // especificando o caminho da saída (onde será gerado). "resolve" é um método que torna um caminho de diretório absoluto. "path.resolve()" se adapta ao sistema utilizado e suas diferenças específicas
         filename: 'bundle.js' // especificando qual é o arquivo de saída (que será gerado)
