@@ -3,8 +3,8 @@ const path = require('path');
 module.exports = {
     entry: './src/JS/main.js',
     output: {
-        filename: '',
-        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'public', 'assets', 'JS'),
     },
     module: {
         rules: [
@@ -13,8 +13,10 @@ module.exports = {
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
-                    option: {
-                        presets: ['@babel/preset-env'],
+                    options: {
+                        presets: [ 
+                            ['@babel/preset-env']
+                        ]
                     }   
                 }
             }
