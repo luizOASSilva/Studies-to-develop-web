@@ -1,2 +1,2 @@
-import './src/assets/CSS/index.css';
+import '../CSS/index.css';
 
