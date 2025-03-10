@@ -37,8 +37,26 @@ axios('https://api.adviceslip.com/advice') // fazendo requisição com o axios
     })
 .catch(e => console.log(e)); // tratando o erro se a requisição falhar
 
-
 const teste = require('./mod1').teste;
 
 console.log(teste);
 
+// aula 2 - continuação
+
+// const mult = require('./mod2'); importando o módulo diretamente e o utilizando como função
+
+// console.log(mult(1, 2));
+
+const Cachorro = require('./mod2'); // importando a classe de um módulo
+
+const cachorrinho = new Cachorro('Ayla'); // instanciando o módulo
+cachorrinho.latir(); // utilizando o método "latir" do módulo
+
+console.log('Caminho atual: ', __filename); // "__filename" aponta para o nome do arquivo atual. Desde a raíz do computador e o nome do arquivo
+
+console.log('Diretório atual: ', __dirname) // "__dirname" aponta para o diretório. Desde a raiz do computador e aponta para a pasta 
+
+const path = require('path'); // path é um módulo reservado do node para traçar caminhos em diferentes sistemas de compuatdores, entre outra funções
+
+console.log(path.resolve(__dirname, 'test')) // o método "resolve()" do objeto path é utilizado para definir o caminho absoluto para qualquer navegador, no primeiro argumento vai a localização atual(__dirname), nos outros as pastas espesíficas criadas dentro desse caminho absoluto
+// acessando a pasta "test" como caminho absoluto para qualquer sistema
