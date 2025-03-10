@@ -1,0 +1,31 @@
+"npm i -y" - instala o npm e suas dependências necessárias no projeto
+
+"npm i express" - instala a última versão do framework "express"
+
+"npm upadate" - atualiza todos os pacotes
+
+"npm install express --save-dev" -> move o framework para devDependecies 
+
+"npm install express@2.1.0" -> para instalar versões específicas
+
+versionamento:       ^2.     1.     0
+nomenclaturas:        major  minor  patch
+
+patch -> para correções de bugs
+
+minor -> criação de um recurso novo, mas dentro de major, n necessitando de uma quebra de versionamento
+
+major -> quebra de compatibilidade das versões anteriores 
+
+^ -> apenas atualizará a minor e patch
+
+~ -> atualização apenas no patch
+
+"npm uninstall express" -> desinstala o pacotes
+
+"npm ls" -> lista as dependências instaladase suas sub depêndencias 
+
+"npm ls --depth=0" -> lista apenas os instalados. O valor "0" pode ser mudado para aprofundar em subpastas
+
+"npm outdate" -> mostra as depedências desatualizadas
+
