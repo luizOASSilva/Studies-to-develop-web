@@ -29,3 +29,5 @@ major -> quebra de compatibilidade das versões anteriores
 
 "npm outdate" -> mostra as depedências desatualizadas
 
+"npm install nodemon --save-dev" -> "save-dev" instala a dependência em devDependencies. Ou seja, dependências que só estarão disponíveis para o desenvolvimente, não para seu funcionamento
+
