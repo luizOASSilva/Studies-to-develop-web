@@ -18,8 +18,8 @@ app.get('/', (req, res) => { // "app.get" mostra uma definição de rota. O mét
     res.send(`
     <form action="/" method="POST">
         <label for="nome"> Primeiro nome: </label>
-        <input type="text" name="text" id="nome">
-        <button type="Enviar "> Enviar formulário </button>
+        <input type="text" name="nome" id="nome">
+        <button type="submit"> Enviar formulário </button>
     </form>
     `); // enviando resposta para a requisição em uma porta específica
 });
