@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     mode: 'production',
-    entry: './frontend/index.js',
+    entry: path.resolve(__dirname, 'frontend'),
     output: {
         filename: 'bundle.js',
         path:path.resolve(__dirname, 'public', 'assets', 'JS'),
@@ -18,6 +18,10 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
+            }, 
+            {
+                test: /\.css/i,
+                use: ['style-loader', 'css-loader']
             }
         ]
     },

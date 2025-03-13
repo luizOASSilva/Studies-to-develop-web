@@ -1,3 +1,5 @@
+import './assets/CSS/style.css' 
+
 const obj = {
     nome: 'Luiz',
     idade: 19
