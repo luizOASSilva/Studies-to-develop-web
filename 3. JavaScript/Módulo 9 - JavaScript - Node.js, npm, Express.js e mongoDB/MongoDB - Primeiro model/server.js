@@ -13,7 +13,6 @@ mongoose.connect(process.env.CONNECTION_STRING) // método "connect()", conecta 
 // process.env é um objeto de "dotenv" que acessa arquivos ".env" e seus valores. Nesse caso "CONNECTION_STRING" possui a url de acesso ao mongoDB
     .then(() => { // "then" trata o êxito da conexão
         // suponha que a base de dados, deva ser carregada antes do express ouvir(listen) a porta operada
-        console.log('mongoDB connect success');
         app.emit('successfully'); // nesse caso, podemos emitir um sinal após a conexão com a base de dados pr meio de "app.emit()"
     }) .catch(e => { // "cathc" trata o erro da conexão com o banco de dados
         console.log(e);
