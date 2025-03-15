@@ -2,9 +2,9 @@ const path = require('path');
 
 module.exports = {
     mode: 'development',
-    entry: './',
+    entry: './frontend/index.js',
     output: {
-        filename: '',
+        filename: 'bundle.js',
         path: path.resolve(__dirname, 'public'),
     },
     module: {
@@ -13,9 +13,12 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
-                    presets: [
-                        ['@Babel/preset-env']
-                    ]
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            ['@babel/preset-env']
+                        ]
+                    }
                 }
             }
         ]
