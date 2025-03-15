@@ -1,3 +1,10 @@
 const mongoose = require('mongoose');
 
-mongoose.model('home', )
+const homeSchema = new mongoose.Schema({
+    nome: String,
+    idade: Number
+});
+
+const homeModel = mongoose.model('Home', homeSchema);
+
+module.exports = homeModel;
