@@ -1,5 +1,5 @@
 {
-  "name": "aula-113---express---helmet-e-csfr",
+  "name": "aula-113---express---helmet-e-csrf",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
