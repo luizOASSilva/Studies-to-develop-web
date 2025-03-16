@@ -7,14 +7,17 @@ const path = require('path');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
-const { create } = require('./src/models/homeModel');
+const helmet = require('helmet');
+const csrsurf = require('csrsurf');
 
 mongoose.connect(process.env.CONNECTION_URI)
     .then(resp => app.emit('successfully'))
     .catch(e => console.log(e));
 
-app.use(express.urlencoded({extended:true}));
-app.use(router);
+app.use(helmet());
+
+app.set('views', path.resolve(__dirname, 'src', 'views'));
+app.set('view engine', 'ejs');
 
 sessionOptions = session({
     secret:'sdadasddadsdsd+asadad',
@@ -25,15 +28,15 @@ sessionOptions = session({
     resave: false,
     saveUninitialized: false,
     cookie: {
-        maxAge: 1000 * 60 * 60 * 24 * 14
+        maxAge: 1000 * 60 * 60 * 24 * 14,
         httpOnly: true
     }
-})
-
-app.set('view engine', 'ejs');
-app.set('views', __dirname, 'src', 'views');
+});
 
 app.use(express.static(path.resolve(__dirname, 'public')));
+
+app.use(express.urlencoded({extended:true}));
+app.use(router);
 
 app.on('successfully', () => {
     app.listen(3000, () => {
