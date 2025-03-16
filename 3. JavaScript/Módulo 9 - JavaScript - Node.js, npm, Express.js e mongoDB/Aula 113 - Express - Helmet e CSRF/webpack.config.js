@@ -1,22 +1,22 @@
 const path = require('path');
 
 module.exports = {
-    mode: 'development',
-    entry: '',
+    mode: 'production',
+    entry: './frontend/index.js',
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__filename, 'public')
+        path: path.resolve(__dirname, 'public')
     },
     module: {
         rules: [
             {
-                test: /\,js$/,
+                test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: ['babel-loader'],
-                    Options: {
+                    loader: 'babel-loader',
+                    options: {
                         presets: [
-                            ['@babrl/preset-env']
+                            ['@babel/preset-env']
                         ]
                     }
                 }

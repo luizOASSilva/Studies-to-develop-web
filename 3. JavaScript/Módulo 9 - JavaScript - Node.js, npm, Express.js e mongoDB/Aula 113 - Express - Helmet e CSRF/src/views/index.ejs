@@ -1,1 +1,10 @@
-<%= include('./partials/head') %>
+<%- include('./partials/head') %>
+
+    <form action="/" method="post">
+        <label for="nome">Digite seu nome:</label for="nome">
+        <input type="text" name="nome" id="nome">
+
+        <input type="submit" value="Realizar login">
+    </form>
+
+<%- include('./partials/footer') %>

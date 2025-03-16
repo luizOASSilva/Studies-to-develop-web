@@ -1,23 +1,23 @@
 <%- include('partials/head') %> <%# "include()" inclui outros arquivos html com tags. Uma espécie de require para ejs. Nesse caso incluímos head.js, que está em partials %>
 
-<form action="" method="post">
-    <label for="nome">Digite seu nome:</label for="nome">
-    <input type="text" name="nome" id="nome">
+    <form action="" method="post">
+        <label for="nome">Digite seu nome:</label for="nome">
+        <input type="text" name="nome" id="nome">
 
-    <input type="submit" value="Realizar login">
-</form>
+        <input type="submit" value="Realizar login">
+    </form>
 
-<p> <%- usuario.nome %></p>  <%# aparecerá apenas o valor da variável. são mais seguros%> 
-<p> <%= usuario.nome %></p>  <%# escapará qualquer tag inserida (nesse caso strong definida na declar) aparecerá apenas o valor da variável %> 
+    <p> <%- usuario.nome %></p>  <%# aparecerá apenas o valor da variável. são mais seguros%> 
+    <p> <%= usuario.nome %></p>  <%# escapará qualquer tag inserida (nesse caso strong definida na declar) aparecerá apenas o valor da variável %> 
 
-<p> <%- teste %> </p>
+    <p> <%- teste %> </p>
 
-<p> <%- idade %> anos</p> <%# idade é uma variável enviada diretamente na chamada de render() %>
+    <p> <%- idade %> anos</p> <%# idade é uma variável enviada diretamente na chamada de render() %>
 
+    <p>
+        <%  for(let nome of nomes) { %>
+                <%- nome %>
+        <%  } %>
+    </p>
+    
 <%- include('partials/footer') %>
-
-<p>
-    <%  for(let nome of nomes) { %>
-            <%- nome %>
-    <%  } %>
-</p>

@@ -7,5 +7,6 @@ homeModel.create({
 });
 
 exports.home = (req, res) => {
+    req.session.user = { nome: 'Luiz', sobrenome: 'Silva'};
     res.render('index');
 };
