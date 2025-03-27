@@ -10,29 +10,31 @@ export default function Form() {
             this.tarefa = e.target.elements.tarefa.value; 
         }
 
-        isValid() {
+        isValid(e) {
             if(!this.tarefa) {
+                e.preventDefault();
                 setError(true);
                 return;
             } 
+
+            if(this.tarefa.trim() === '') {
+                e.preventDefault();
+                setError(true);
+                return;
+            }
 
             this.setLocalSorage();
         }
 
         setLocalSorage() {
             localStorage.setItem(`${localStorage.length + 1}`, `${this.tarefa}`);
-        
-
         }
     }
 
     function handleOnSubmit(e) {
-        e.preventDefault();
-
         const task = new Task(e)
-        task.isValid();
+        task.isValid(e);
     }
-
 
   return (
     <>
