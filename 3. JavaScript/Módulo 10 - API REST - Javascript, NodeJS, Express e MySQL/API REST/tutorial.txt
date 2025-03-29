@@ -1,0 +1,6 @@
+'npm i sucrase' => "Sucrase" é um transpilador de JavaScript que surge como uma alternativa ao babel. Sucrase permite que ES6 Modules possam ser utilizados em Node.js - isso é possível por meio de uma conversão de import/export para CommonJS
+"nodemon.json" configura o nodemon para utilizar o sucrase como transpilador e ambiente de desenvolvimento
+"insomnia" é um aplicativo open source que ajuda a projetar, testar, depurar e interagir com APIs
+"npx sequelize migration:create --name alunos" comando para criar um arquivo de migração na raíz do projeto, para maniulação de tabelas.Um arquivo de migração é um schema que será utilizado para transportar dados do código para a base de dados
+"npx sequelize db:migrate" para fazer uma migração(setar o schema para criação das tabelas)
+"npx sequelize db:migrate:undo" para desfazer uma migração e voltar à um estado anterior
