@@ -8,6 +8,8 @@ export default function TaskList() {
   const inpt = document.querySelector('#tarefa');
 
   function handleEditOnClick(key) {
+    const tarefa = document.querySelector('#tarefa');
+    tarefa.value = localStorage.getItem(key);
     
   }
 
@@ -20,8 +22,11 @@ export default function TaskList() {
     <li key={key}>
       {localStorage.getItem(key)}
       
-      <a onClick={() => handleDeleteOnClick(key)}> <FontAwesomeIcon icon={faTrash} /> </a>
-      <a onClick={() => handleEditOnClick(key)}> <FontAwesomeIcon icon={faPenToSquare} /> </a>
+      <div className='options'>
+        <a onClick={() => handleDeleteOnClick(key)}> <FontAwesomeIcon icon={faTrash} /> </a>
+        <a onClick={() => handleEditOnClick(key)}> <FontAwesomeIcon icon={faPenToSquare} /> </a>
+      </div>
+
     </li>
   ))
 

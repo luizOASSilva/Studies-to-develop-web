@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import './Form.css'
+import React, { useState } from 'react';
+import './Form.css';
 
 export default function Form() {
 
@@ -28,6 +28,10 @@ export default function Form() {
 
         setLocalSorage() {
             localStorage.setItem(`${localStorage.length + 1}`, `${this.tarefa}`);
+        }
+
+        editLocalStorage() {
+            console.log('teste');
         }
     }
 
