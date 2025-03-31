@@ -1,5 +1,5 @@
 import Sequelize, { Model }  from "sequelize";
-import bcryptjs from 'bcryptjs'
+import bcrypt from 'bcrypt';
 
 export default class User extends Model {
   static init(sequelize) {
@@ -39,7 +39,7 @@ export default class User extends Model {
     });
 
     this.addHook('beforeSave', async user => { // ganchos (hooks) permitem que sejam executadas fun'~oes específicas em determinados pontos do ciclo de vida de uma instância, ou consulta
-      user.password_hash = await bcryptjs.hash(user.password)
+      user.password_hash = await bcrypt.hash(user.password, 8); // atribuindo a "password_hash" o valor de "password" depois de passar por uma criptografia
     });
 
     return this;

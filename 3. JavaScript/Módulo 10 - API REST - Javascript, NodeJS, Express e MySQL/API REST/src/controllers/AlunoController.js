@@ -1,10 +1,10 @@
-import Aluno from "../models/Aluno";
+import Aluno from "../models/AlunoModel";
 
-class Home {
+class AlunoController {
   async index(req, res) {
     try {
       const novoAluno = await Aluno.create({
-        nome: 'Luiz',
+        nome: 'Márcio',
         sobrenome: 'Silva',
         email: 'luizotavioassilva@gmail.com',
         nota: 7.5,
@@ -19,4 +19,4 @@ class Home {
   }
 }
 
-export default new Home();
+export default new AlunoController();

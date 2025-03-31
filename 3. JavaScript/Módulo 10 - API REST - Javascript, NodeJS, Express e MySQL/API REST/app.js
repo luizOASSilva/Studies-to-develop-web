@@ -1,7 +1,9 @@
 import { config } from "dotenv";
 import './src/database/connection'
 import express from "express";
-import home from "./src/routes/home";
+import aluno from "./src/routes/aluno";
+import user from "./src/routes/user";
+
 
 class App {
   constructor() {
@@ -17,7 +19,8 @@ class App {
   }
 
   routes() {
-    this.app.use('/', home);
+    this.app.use('/', aluno);
+    this.app.use('/users', user)
   }
 }
 

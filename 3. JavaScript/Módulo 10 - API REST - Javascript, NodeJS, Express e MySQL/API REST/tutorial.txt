@@ -4,3 +4,8 @@
 "npx sequelize migration:create --name alunos" comando para criar um arquivo de migração na raíz do projeto, para maniulação de tabelas.Um arquivo de migração é um schema que será utilizado para transportar dados do código para a base de dados
 "npx sequelize db:migrate" para fazer uma migração(setar o schema para criação das tabelas)
 "npx sequelize db:migrate:undo" para desfazer uma migração e voltar à um estado anterior
+nomenclatura dos models:
+"index" -> lista todos os itens -> GET
+"store/create" -> cria item  -> POST
+"show" -> mostra um item -> GET
+"update" -> atualiza um item -> PATCH ou PUT

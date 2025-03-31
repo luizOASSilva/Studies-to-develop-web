@@ -8,7 +8,12 @@ module.exports = {
   username: process.env.DATABASE_USERNAME,
   password: process.env.DATABASE_PASSWORD,
   database: process.env.DATABASE,
-  allowPublicKeyRetrieval: true,
+  dialectOptions: {
+    allowPublicKeyRetrieval: true,
+    ssl: {
+      rejectUnauthorized: false,
+    },
+  },
   define: {
     timestamps: true,
     underscored: true,
