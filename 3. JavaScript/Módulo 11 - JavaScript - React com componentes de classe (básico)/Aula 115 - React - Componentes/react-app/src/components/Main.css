@@ -1,9 +1,0 @@
-.main {
-    display: flex;
-    flex-direction: column;
-    background-color: aqua;
-    padding: 10px;
-}
-form, h1 {
-    margin: 0 auto;
-}
