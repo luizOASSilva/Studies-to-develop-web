@@ -1,0 +1,53 @@
+{
+  // Visite https://aka.ms/tsconfig para mais informações
+  "compilerOptions": {
+    // Diretórios
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    // Configurações de linguagem
+    "module": "es6",
+    "target": "es5",
+    "jsx": "react",
+    "allowJs": true,
+
+    // Tratamento de depreciações
+    "ignoreDeprecations": "5.0", // Corrigido de "6.0" para "5.0"
+
+    // Tipagem e geração de arquivos
+    "noImplicitAny": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+
+    // Opções de verificação rigorosa
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Outras opções recomendadas
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+
+    // Tipos globais (vazio por enquanto)
+    "types": []
+  },
+
+  // Inclui apenas os arquivos TypeScript na pasta src
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+
+  // Exclui arquivos que não devem ser compilados
+  "exclude": [
+    "node_modules",
+    "dist",
+    "frontend/assets/js",       // Onde está o bundle gerado
+    "webpack.config.js",
+    "webpack.config.d.ts"
+  ]
+}
