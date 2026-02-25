@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    /* =========================
+       Ambiente (Frontend moderno)
+    ========================== */
+    "target": "ESNext",
+    "module": "ES6",
+    "moduleResolution": "bundler",
+    "lib": ["DOM", "ESNext"],
+
+    /* =========================
+       Estrutura (opcional)
+    ========================== */
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    /* =========================
+       Qualidade e segurança
+    ========================== */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    /* =========================
+       Debug
+    ========================== */
+    "sourceMap": true,
+
+    /* =========================
+       Performance
+    ========================== */
+    "skipLibCheck": true
+  },
+  "include": ["src"]
+}
