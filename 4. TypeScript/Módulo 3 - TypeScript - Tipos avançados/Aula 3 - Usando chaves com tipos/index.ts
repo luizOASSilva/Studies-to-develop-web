@@ -1,16 +1,18 @@
-type Veiculo = { 
+type Veiculo = {
     marca: string;
-    ano: number;
-}
+    ano: string;
+};
 
-type Car = {
-    brand: Veiculo['marca']; // podemos usar a chave como outro tipo para espelhar
-    year: Veiculo['ano']; // se ano estiver como string, year também 
+type Cor = {
+    brand: Veiculo['marca']; // agora brand e year herdam os tipos de veículo
+    year: Veiculo['ano'];
     name: string;
 }
 
-const carro: Car = {
+const carro: Cor = {
     brand: 'Ford',
-    year: 2026, // '2026' gerará erro, pois ano em veículo está definido como number
-    name: 'New Fiesta'
+    year: '2026', // se o tipo em veículo mudar, cor será afetada
+    name: 'New Fiesta', 
 }
+
+console.log(carro);
