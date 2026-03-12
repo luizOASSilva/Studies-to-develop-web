@@ -20,5 +20,3 @@ function decorator<T extends new(...args: any[]) => any>(target: T): T{
 const animal = new Animal('Preto');
 
 console.log(animal);
-
-

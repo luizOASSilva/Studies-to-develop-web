@@ -5,7 +5,6 @@ export default class Poll<T> {
 
     constructor(question: string, options: T[]) {
         if (options.length <= 1) throw new Error('Pelo menos duas opções');
-
         this._question = question;
         this._optionsText = options;
         this._votes = new Array(options.length).fill(0);

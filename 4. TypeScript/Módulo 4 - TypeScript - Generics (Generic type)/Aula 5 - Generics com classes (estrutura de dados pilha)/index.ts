@@ -5,7 +5,7 @@ export class Pessoa<T, U> { // typescript infere sozinho com constructor
 const pessoa1 = new Pessoa('Luiz', 20);
 const pessoa2 = new Pessoa(['Luiz'], {idade: 20});
 
-export class Stack<T> {
+export class Stack<T> { // quando valores não são diretamente setados, pode ocorrer problema de tipagem
     private contador = 0;
     private elementos: { [K: number]: T } = []; // o elemento pode ser acessado com um number do tipo K, maso valor armazenado é do tipo T
 
