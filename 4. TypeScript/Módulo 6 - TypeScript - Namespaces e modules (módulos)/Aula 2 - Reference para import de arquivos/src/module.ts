@@ -21,3 +21,5 @@ const pessoaDoNamespace = new MeuNamespace.PessoaDoNamespace('Luiz'); // para ut
 console.log(pessoaDoNamespace);
 console.log(MeuNamespace.nomeDoNameSpace); // funciona como objetivo
 console.log(MeuNamespace.OutroNameSpace.nomeDoNameSpace) // posso acessar e empilhar namespaces
+
+const constDoNamespace = "Valor da const do namespace";
