@@ -2,15 +2,14 @@
   "compilerOptions": {
     /* Ambiente */
     "target": "ES2022",
-    "module": "amd",
-    "moduleResolution": "node",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "lib": ["ES2022"],
     "types": ["node"],
 
-    "allowJs": true,
+    /* Diretórios */
     "rootDir": "src",
-    "outFile": "dist/bundle.js",
-    // "outDir": "dist",        
+    "outDir": "dist",
 
     /* Decorators */
     "experimentalDecorators": true,

@@ -1,28 +1,24 @@
-"use strict";
-var MeuNamespace;
-(function (MeuNamespace) {
-    console.log('Luiz');
-    MeuNamespace.nomeDoNameSpace = 'Luiz';
-    class PessoaDoNamespace {
-        nome;
-        constructor(nome) {
-            this.nome = nome;
-        }
-    }
-    MeuNamespace.PessoaDoNamespace = PessoaDoNamespace;
-    const pessoa = new PessoaDoNamespace('Luiz');
-    let OutroNameSpace;
-    (function (OutroNameSpace) {
-        OutroNameSpace.nomeDoNameSpace = 'Nome do outro namespace'; // tem o mesmo nome, não verifica escopo e por isso permite criação de nome igual
-    })(OutroNameSpace = MeuNamespace.OutroNameSpace || (MeuNamespace.OutroNameSpace = {}));
-})(MeuNamespace || (MeuNamespace = {}));
-// const pessoa = new PessoaDoNamespace('Luiz'); -> gera erro
-const pessoaDoNamespace = new MeuNamespace.PessoaDoNamespace('Luiz'); // para utilizar a função exportada de dentro do namespace, precisamos chamar seu nome
-console.log(pessoaDoNamespace);
-console.log(MeuNamespace.nomeDoNameSpace); // funciona como objetivo
-console.log(MeuNamespace.OutroNameSpace.nomeDoNameSpace); // posso acessar e empilhar namespaces
-// reference funciona com amd em tsConfig.ts
-/// <reference path="module.ts" /> 
-console.log(MeuNamespace.nomeDoNameSpace); // funcionando
-console.log(constDoNamespace);
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+define("module", ["require", "exports", "lodash"], function (require, exports, lodash_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    lodash_1 = __importDefault(lodash_1);
+    lodash_1.default.mul = function (array) {
+        return array.reduce((previousValue, currentValue) => previousValue * currentValue, 1);
+    };
+    exports.default = lodash_1.default;
+});
+define("index", ["require", "exports", "module"], function (require, exports, module_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    module_1 = __importDefault(module_1);
+    const array = [100, 200, 300, 400];
+    console.log(module_1.default.sum(array));
+    console.log(module_1.default.min(array));
+    console.log(module_1.default.max(array));
+    console.log(module_1.default.mean(array));
+    console.log(module_1.default.mul(array));
+});
 //# sourceMappingURL=bundle.js.map
