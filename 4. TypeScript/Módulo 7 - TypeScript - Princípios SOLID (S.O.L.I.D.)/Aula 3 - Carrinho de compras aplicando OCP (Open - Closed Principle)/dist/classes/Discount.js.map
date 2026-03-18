@@ -1,0 +1,1 @@
+{"version":3,"file":"Discount.js","sourceRoot":"","sources":["../../src/classes/Discount.ts"],"names":[],"mappings":"AAAA,MAAM,OAAgB,QAAQ;CAE7B;AAED,MAAM,OAAO,oBAAqB,SAAQ,QAAQ;IAC9B,QAAQ,GAAG,GAAG,CAAC;IAE/B,SAAS,CAAC,KAAa;QACnB,OAAO,KAAK,GAAG,KAAK,GAAG,IAAI,CAAC,QAAQ,CAAC;IACzC,CAAC;CACJ"}
