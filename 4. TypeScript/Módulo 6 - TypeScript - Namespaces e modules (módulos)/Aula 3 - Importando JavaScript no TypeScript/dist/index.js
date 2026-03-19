@@ -1,5 +1,6 @@
 "use strict";
-// reference funciona com commonJs em tsConfig.ts
-/// <reference path="module.ts" /> 
-console.log(MeuNamespace.PessoaDoNamespace);
+Object.defineProperty(exports, "__esModule", { value: true });
+const module_1 = require("./module");
+const result = (0, module_1.soma)(10, 20);
+console.log(result);
 //# sourceMappingURL=index.js.map
