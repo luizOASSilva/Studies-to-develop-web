@@ -3,7 +3,8 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc && node dist/index.js",
-    "test": "jest"
+    "test": "jest",
+    "test:silent": "jest --watchAll --silent --noStackTrace"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",

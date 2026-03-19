@@ -1,0 +1,16 @@
+{
+  // Usa a versão do TypeScript do projeto
+  "typescript.tsdk": "node_modules/typescript/lib",
+
+  // Validação do TypeScript ativada
+  "typescript.validate.enable": true,
+
+  // Desativa validação de JS para evitar falsos positivos
+  "javascript.validate.enable": false,
+
+  // Ajuda o TS a entender projetos complexos com Node ESM
+  "tsserver.experimental.enableProjectDiagnostics": true,
+
+  // Opcional: sugestões do VSCode para Jest
+  "jest.pathToJest": "node_modules/.bin/jest"
+}
