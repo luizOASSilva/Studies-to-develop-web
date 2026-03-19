@@ -1,5 +1,6 @@
 /*
-    Liskov Subtitution Principle
+    Interface Segregation Principle 
+    Os clientes não devem ser forçados a depender de interfaces que não utilizam
 */
 
 import { Messaging } from "./services/Messaging.js";
@@ -8,14 +9,17 @@ import { Persistency } from "./services/Persistency.js";
 import { Product } from "./classes/Product.js";
 import { ShoppingCart } from "./classes/ShoppingCart.js";
 import { FiftyPercentDiscount, NoDiscount } from "./classes/Discount.js";
+import { EnterpriseCustomer, IndividualCustomer } from "./classes/Customer.js";
 
 const fiftyPercentDiscount = new FiftyPercentDiscount()
 const noDiscount = new NoDiscount();
 const shoppingCart = new ShoppingCart(noDiscount);
 const messaging = new Messaging();
 const persistency = new Persistency();
+const individualCustomer = new IndividualCustomer('Luiz', 'Silva', '511-598-999-35');
+const enterpriseCustomer = new EnterpriseCustomer('Fatec', '2222222/22');
 
-const order = new Order(shoppingCart, messaging, persistency);
+const order = new Order(shoppingCart, messaging, persistency, individualCustomer);
 
 shoppingCart.addItem(new Product('Camiseta', 50));
 shoppingCart.addItem(new Product('Shorts', 30));

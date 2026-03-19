@@ -10,5 +10,5 @@
     "sourceMap": true,
     "skipLibCheck": true
   },
-  "include": ["src", "../Aula 5 - Carrinho de compras aplicando ISP (Interface Segregation Principle)/src/classes/Customer.ts"]
+  "include": ["src"]
 }
