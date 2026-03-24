@@ -1,15 +1,26 @@
+import { CartItem } from "../interfaces/CartItem";
 import { Discount } from "./Discount";
 import { ShoppingCart } from "./ShoppingCart";
 
+const PRODUTO_1: CartItem = { name: 'Produto 1', price: 10 };
+const PRODUTO_2: CartItem = { name: 'Produto 2', price: 20 };
+const CALCA: CartItem = { name: 'Calça', price: 200 };
+const CANETA: CartItem = { name: 'Caneta', price: 10 };
+
 describe('ShoppingCart', () => {
-    
     describe('ShoppingCart without discount', () => {
 
         let sut: ShoppingCart;
-        class DiscountMock extends Discount {}
+
+        class NoDiscountMock extends Discount {
+            calculate(price: number): number {
+                return price;
+            }
+        }
 
         beforeEach(() => {
-            sut = new ShoppingCart(new DiscountMock());
+            sut = new ShoppingCart(new NoDiscountMock());
+            jest.resetAllMocks();
         });
 
         it('should be an empty cart when no product is added', () => {
@@ -18,32 +29,46 @@ describe('ShoppingCart', () => {
         });
 
         it('should add items to the cart', () => {
-            sut.addItem({ name: 'Produto 1', price: 10 });
+            sut.addItem(PRODUTO_1);
 
             expect(sut.items.length).toBe(1);
             expect(sut.isEmpty()).toBe(false);
         });
 
         it('should remove one item from the cart', () => {
-            sut.addItem({ name: 'Produto 1', price: 10 });
-            sut.addItem({ name: 'Produto 2', price: 20 });
-        
+            sut.addItem(PRODUTO_1);
+            sut.addItem(PRODUTO_2);
+
             sut.removeItem(0);
 
             expect(sut.items.length).toBe(1);
-            expect(sut.items[0].name).toBe('Produto 2');
+            expect(sut.items[0].name).toBe(PRODUTO_2.name);
         });
 
-        it('should calculate total correctly', ()=> {
-            sut.addItem({ name: 'Produto 1', price: 10 });
-            sut.addItem({ name: 'Produto 2', price: 20 });
+        it('should throw RangeError when removing invalid index', () => {
+            expect(() => sut.removeItem(99)).toThrow(RangeError);
+        });
+
+        it('should return 0 as total for empty cart', () => {
+            expect(sut.total()).toBe(0);
+        });
+
+        it('should calculate total correctly', () => {
+            sut.addItem(PRODUTO_1);
+            sut.addItem(PRODUTO_2);
 
             expect(sut.total()).toBe(30);
-        });  
+        });
 
-        it('should clear cart', ()=> {
-            sut.addItem({ name: 'Produto 1', price: 10 });
-            sut.addItem({ name: 'Produto 2', price: 10 });
+        it('should return full price when no discount is applied', () => {
+            sut.addItem(PRODUTO_1);
+
+            expect(sut.totalWithDiscount()).toBe(sut.total());
+        });
+
+        it('should clear cart', () => {
+            sut.addItem(PRODUTO_1);
+            sut.addItem(PRODUTO_2);
 
             sut.clear();
 
@@ -52,33 +77,31 @@ describe('ShoppingCart', () => {
         });
     });
 
-       
 
     describe('ShoppingCart with discount', () => {
 
         let sut: ShoppingCart;
-        class DiscountMock extends Discount {
+
+        class TenPercentDiscountMock extends Discount {
             calculate(price: number): number {
                 return price - (price * 0.10);
             }
         }
 
         beforeEach(() => {
-            sut = new ShoppingCart(new DiscountMock());
+            sut = new ShoppingCart(new TenPercentDiscountMock());
         });
 
         it('should apply discount correctly', () => {
-            sut.addItem({ name: 'calça', price: 200 });
+            sut.addItem(CALCA);
 
             expect(sut.totalWithDiscount()).toBe(180);
         });
-    
-        
     });
 
-    // testando a integração do ShoppingCart com Discount
 
     describe('ShoppingCart and Discount integration', () => {
+
         let sut: ShoppingCart;
         let discountMock: DiscountMock;
 
@@ -87,23 +110,20 @@ describe('ShoppingCart', () => {
                 return price - (price * 0.50);
             }
         }
-        
+
         beforeEach(() => {
-            discountMock = new DiscountMock(); 
+            discountMock = new DiscountMock();
             sut = new ShoppingCart(discountMock);
         });
 
         it('should call discount.calculate(price) with total price once when totalWithDiscount is called', () => {
-            sut.addItem({ name: 'Caneta', price: 10 });
+            sut.addItem(CANETA);
 
-            // espia quando o método calculate de Discount é chamado
-            let discountMockSpy = jest.spyOn(discountMock, 'calculate'); // a instância utilizada tem que ser a mesma na sua criação
+            const discountMockSpy = jest.spyOn(discountMock, 'calculate');
 
             expect(sut.totalWithDiscount()).toBe(5);
-            
-            expect(discountMockSpy).toHaveBeenCalledTimes(1); // quantas vezes calculate foi chamado
-            expect(discountMockSpy).toHaveBeenCalledWith(sut.total()); // calculate temque ser chamado com o valor do total
+            expect(discountMockSpy).toHaveBeenCalledTimes(1);
+            expect(discountMockSpy).toHaveBeenCalledWith(10);
         });
-
     });
 });
